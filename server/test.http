@@ -1,0 +1,70 @@
+### LOGIN (Invalid, missing body)
+POST http://localhost:3001/api/auth/login
+Content-Type: application/json
+
+{}
+
+### LOGIN (Valid example)
+POST http://localhost:3001/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "student1",
+  "password": "password1"
+}
+
+### CHECK CURRENT SESSION (after login)
+GET http://localhost:3001/api/auth/current
+Cookie: s%3AZOVN4NiD-UmuS6HsuA4W_IruDXuwLW4v.NzuSXDdeSIbWK96aZqmPkLIRMZ1gS87yNqpqGXzOnBU
+
+### START GAME (Authenticated)
+POST http://localhost:3001/api/games/start
+Cookie: s%3AlVpZyddximEolSpi7HsU2E_pTyhBby6u.MnCUfQ3s6E8OK7kg5NhCaRPMRwVis%2BARrVk1mFccfww
+
+### GET CURRENT GAME
+GET http://localhost:3001/api/games/current
+Cookie: s%3A2qIFSQo13TgPlWpkB2XTsDuQpRcLROPs.f3QYtEaBhdQoS35N9LZ43nLEU3fx60Vf6bME0DH3ikI
+
+### SUBMIT GUESS (example)
+POST http://localhost:3001/api/games/guess
+Content-Type: application/json
+Cookie: s%3AQLNtR7yix-y5a7IS8eWvCbPKW5DYshYh.svarJe4DCa%2FzQVy3%2BKATX6PQ0DVivuKo7prGSxUDpXU
+
+{
+  "gameId": 17,
+  "guessCardId": 13,
+  "position": 2,
+  "timeout": false
+}
+
+### NEXT ROUND
+POST http://localhost:3001/api/games/next-round
+Cookie: s%3AQLNtR7yix-y5a7IS8eWvCbPKW5DYshYh.svarJe4DCa%2FzQVy3%2BKATX6PQ0DVivuKo7prGSxUDpXU
+
+### GAME HISTORY
+GET http://localhost:3001/api/games/history
+Cookie: s%3AlVpZyddximEolSpi7HsU2E_pTyhBby6u.MnCUfQ3s6E8OK7kg5NhCaRPMRwVis%2BARrVk1mFccfww
+
+### LOGOUT
+POST http://localhost:3001/api/auth/logout
+Cookie: s%3AQLNtR7yix-y5a7IS8eWvCbPKW5DYshYh.svarJe4DCa%2FzQVy3%2BKATX6PQ0DVivuKo7prGSxUDpXU
+
+### DEMO GAME (anonimo)
+GET http://localhost:3001/api/cards/demo
+
+### DEMO GUESS (anonimo)
+POST http://localhost:3001/api/cards/demo/guess
+Content-Type: application/json
+
+{
+  "initialCards": [
+    { "id": 40, "misfortune_index": 12.3 },
+    { "id": 27, "misfortune_index": 25.7 },
+    { "id": 34, "misfortune_index": 42.0 }
+
+  ],
+  "guessCardId": 30,
+  "position": 1,
+  "timeout": true
+}
+
