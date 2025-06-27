@@ -503,14 +503,6 @@ or error
 - **History Tracking**: Comprehensive game statistics and performance metrics
 - **Error Recovery**: Robust error handling with graceful degradation
 
-## 📸 Screenshots
-
-*Game interface showing card positioning challenge*
-![Screenshot 1](./img/Screenshot-2025-06-03-12-43-21.png)
-
-*Profile page displaying game history and statistics*
-![Screenshot 2](./img/Screenshot-2025-06-03-12-44-16.png)
-
 ## 🧪 Demo Accounts
 
 For testing purposes, use these pre-configured accounts:
